@@ -16,9 +16,10 @@ Calculator.prototype.multiply = function(number){
 }
  
 Calculator.prototype.divide = function(number){
-    if (number == 0){
-        throw Error('Number can not be zero(0)');
+    if (number !== 0){
+        this.total /= number;
+        return this.total;}
+        else{
+            return "Cannot divide by zero";
+        }
     }
-
-    return (this.total /= number);
-}

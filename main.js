@@ -3,13 +3,17 @@ function calculate(event){
     const expression  = /\/|\*|\-|\+/;
 
     const numbers = inputValue.split(expression);
-    //console.log(numbers);
     const numberA = +numbers[0];
     // you can use the parseInt or put a '+' infront of your variable to change it from
     // string to a number
     const numberB = +numbers[1];
 
     const operation = inputValue.match(expression);
+    if (isNaN(numberA) || isNaN(numberB) || operation ==null){
+        updateResult('Operation not recognised')
+        
+        return;
+    }
     const operator = operation[0];
 
     const calculator = new Calculator();
